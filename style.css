@@ -1,3 +1,1412 @@
+Below are complete replacement files. This version adds:
+
+* Functional mobile navigation
+* Active navigation states while scrolling
+* Accessible strategy-call modal
+* Contact form that opens a prefilled WhatsApp conversation
+* Escape-key and outside-click modal closing
+* Form validation
+* Functional CTA buttons throughout
+* Responsive layouts
+* Reduced-motion support
+* No fake portfolio or testimonial content
+
+It builds on your current HTML and CSS files.  
+
+## `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en-SR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Websites That Grow Businesses in Suriname | Zenta Creative</title>
+
+  <meta
+    name="description"
+    content="Zenta Creative builds conversion-focused websites and improves Google visibility for businesses in Suriname."
+  />
+
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  />
+
+  <meta name="theme-color" content="#070908" />
+
+  <link rel="canonical" href="https://zentacreative.com/" />
+  <link rel="alternate" hreflang="en-SR" href="https://zentacreative.com/" />
+  <link rel="alternate" hreflang="nl-SR" href="https://zentacreative.com/nl/" />
+  <link rel="alternate" hreflang="x-default" href="https://zentacreative.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_SR" />
+  <meta property="og:site_name" content="Zenta Creative" />
+  <meta property="og:url" content="https://zentacreative.com/" />
+
+  <meta
+    property="og:title"
+    content="Websites That Grow Businesses in Suriname | Zenta Creative"
+  />
+
+  <meta
+    property="og:description"
+    content="Premium websites and Google visibility systems designed to generate more enquiries, bookings, and sales."
+  />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;1,600&amp;display=swap"
+    rel="stylesheet"
+  />
+
+  <script>
+    document.documentElement.classList.add("js");
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://zentacreative.com/#organization",
+          "name": "Zenta Creative",
+          "url": "https://zentacreative.com/",
+          "description": "Zenta Creative designs conversion-focused websites and digital growth systems for businesses in Suriname.",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Suriname"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+5978877663",
+            "email": "info@zentacreative.com",
+            "contactType": "sales",
+            "url": "https://wa.me/5978877663",
+            "areaServed": "SR",
+            "availableLanguage": ["English", "Dutch"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zentacreative.com/#website",
+          "url": "https://zentacreative.com/",
+          "name": "Zenta Creative",
+          "publisher": {
+            "@id": "https://zentacreative.com/#organization"
+          },
+          "inLanguage": ["en-SR", "nl-SR"]
+        }
+      ]
+    }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <div class="site-background" aria-hidden="true">
+    <div class="background-grid"></div>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <a class="logo" href="#top" aria-label="Zenta Creative homepage">
+      Zenta<span>.</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a class="nav-section-link" href="#approach">Approach</a>
+      <a class="nav-section-link" href="#services">Solutions</a>
+      <a class="nav-section-link" href="#process">Process</a>
+      <a class="nav-section-link" href="#google">Google</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+
+      <div class="language-switch" aria-label="Language selector">
+        <span aria-current="page">EN</span>
+        <a href="/nl/" lang="nl-SR" hreflang="nl-SR">NL</a>
+      </div>
+
+      <button
+        class="nav-cta js-open-contact"
+        type="button"
+      >
+        Book a strategy call
+      </button>
+    </div>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-controls="navLinks"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <main id="main-content">
+    <header class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow reveal">
+            Digital growth partner for businesses in Suriname
+          </p>
+
+          <h1 class="reveal">
+            Websites that turn
+            <span class="serif">visitors into customers.</span>
+          </h1>
+
+          <p class="hero-copy reveal">
+            Zenta Creative designs premium websites, improves your Google
+            visibility, and creates clear customer journeys that generate more
+            enquiries, bookings, and sales.
+          </p>
+
+          <div class="hero-actions reveal">
+            <button
+              class="button button-primary js-open-contact"
+              type="button"
+            >
+              Book a free strategy call
+              <span aria-hidden="true">↗</span>
+            </button>
+
+            <a class="button button-secondary" href="#approach">
+              See our approach
+            </a>
+          </div>
+
+          <div class="hero-proof reveal">
+            <div>
+              <strong>Strategy-led</strong>
+              <span>Designed around your business goals</span>
+            </div>
+
+            <div>
+              <strong>Conversion-focused</strong>
+              <span>Built to generate customer action</span>
+            </div>
+
+            <div>
+              <strong>Local expertise</strong>
+              <span>Created for the Suriname market</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-showcase reveal-right">
+          <div class="showcase-window">
+            <div class="browser-bar">
+              <div class="browser-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="browser-address">
+                yourbusiness.sr
+              </div>
+            </div>
+
+            <div class="demo-page">
+              <div class="demo-nav">
+                <strong>Studio.</strong>
+                <span>Services</span>
+                <span>About</span>
+                <span>Contact</span>
+              </div>
+
+              <div class="demo-hero">
+                <span class="demo-label">
+                  Built for growth
+                </span>
+
+                <h2>
+                  A stronger website.
+                  <em>A stronger business.</em>
+                </h2>
+
+                <p>
+                  Clear positioning, premium design, and a customer journey
+                  built to generate action.
+                </p>
+
+                <div class="demo-button">
+                  Start a project
+                </div>
+              </div>
+
+              <div class="demo-results">
+                <div>
+                  <strong>More trust</strong>
+                  <span>Professional presentation</span>
+                </div>
+
+                <div>
+                  <strong>More leads</strong>
+                  <span>Clear calls to action</span>
+                </div>
+
+                <div>
+                  <strong>More visibility</strong>
+                  <span>Google-ready structure</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-card floating-card-one">
+            <span class="status-dot"></span>
+
+            <div>
+              <strong>Conversion ready</strong>
+              <small>Clear customer journey</small>
+            </div>
+          </div>
+
+          <div class="floating-card floating-card-two">
+            <strong>Google visibility</strong>
+            <small>Search, Maps, reviews, and contact</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="container trust-bar reveal">
+        <p>Designed for ambitious local businesses</p>
+
+        <div class="trust-items">
+          <span>Professional services</span>
+          <span>Hospitality</span>
+          <span>Retail</span>
+          <span>Real estate</span>
+          <span>Health and wellness</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section value-section">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="kicker">Why Zenta</p>
+
+          <h2>
+            More than a beautiful website.
+          </h2>
+
+          <p>
+            We connect strategy, design, visibility, and conversion so your
+            website becomes a practical growth tool.
+          </p>
+        </div>
+
+        <div class="value-cards">
+          <article class="value-card reveal">
+            <span class="card-number">01</span>
+
+            <div class="card-icon" aria-hidden="true">
+              ◎
+            </div>
+
+            <h3>Strategy first</h3>
+
+            <p>
+              We clarify your audience, offer, goals, and positioning before
+              making design decisions.
+            </p>
+
+            <strong class="card-outcome">
+              Outcome: clearer direction
+            </strong>
+          </article>
+
+          <article class="value-card reveal">
+            <span class="card-number">02</span>
+
+            <div class="card-icon" aria-hidden="true">
+              ↗
+            </div>
+
+            <h3>Designed to convert</h3>
+
+            <p>
+              Every section guides visitors toward messaging, calling, booking,
+              or requesting a quote.
+            </p>
+
+            <strong class="card-outcome">
+              Outcome: more qualified leads
+            </strong>
+          </article>
+
+          <article class="value-card reveal">
+            <span class="card-number">03</span>
+
+            <div class="card-icon" aria-hidden="true">
+              ✦
+            </div>
+
+            <h3>Built to grow</h3>
+
+            <p>
+              Your website is structured for speed, mobile use, SEO, future
+              content, and new services.
+            </p>
+
+            <strong class="card-outcome">
+              Outcome: long-term value
+            </strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section capability-section" id="approach">
+      <div class="container">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <p class="kicker">How we create value</p>
+
+            <h2>
+              Built around your business, not a template.
+            </h2>
+          </div>
+
+          <p>
+            Every Zenta project starts with the customer journey. We combine
+            strategy, messaging, design, visibility, and conversion into one
+            clear digital experience.
+          </p>
+        </div>
+
+        <div class="capability-showcase">
+          <article class="capability-feature reveal">
+            <div class="capability-preview">
+              <div class="strategy-window">
+                <div class="strategy-window-top">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+
+                  <div class="strategy-address">
+                    zenta.project/strategy
+                  </div>
+                </div>
+
+                <div class="strategy-content">
+                  <div class="strategy-header">
+                    <span class="strategy-label">
+                      Website strategy
+                    </span>
+
+                    <h3>
+                      From business challenge
+                      <em>to customer action.</em>
+                    </h3>
+                  </div>
+
+                  <div class="strategy-flow">
+                    <div>
+                      <span>01</span>
+                      <strong>Position</strong>
+
+                      <small>
+                        Clarify what you offer and why customers should choose
+                        you.
+                      </small>
+                    </div>
+
+                    <div>
+                      <span>02</span>
+                      <strong>Guide</strong>
+
+                      <small>
+                        Build a clear journey from first impression to enquiry.
+                      </small>
+                    </div>
+
+                    <div>
+                      <span>03</span>
+                      <strong>Convert</strong>
+
+                      <small>
+                        Make the next action obvious, easy, and persuasive.
+                      </small>
+                    </div>
+                  </div>
+
+                  <div class="strategy-result">
+                    <span class="status-dot"></span>
+
+                    <div>
+                      <p>
+                        Designed around a real business objective
+                      </p>
+
+                      <strong>
+                        More clarity. More trust. More action.
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="capability-feature-content">
+              <p class="capability-label">
+                Our approach
+              </p>
+
+              <h3>
+                We solve the business problem before designing the interface.
+              </h3>
+
+              <p>
+                A strong website is not just a collection of attractive
+                sections. It should explain your value, remove customer
+                uncertainty, build confidence, and guide visitors toward the
+                right next step.
+              </p>
+
+              <div class="capability-points">
+                <div>
+                  <strong>Clear positioning</strong>
+
+                  <span>
+                    Visitors understand what you offer and who it is for.
+                  </span>
+                </div>
+
+                <div>
+                  <strong>Focused customer journey</strong>
+
+                  <span>
+                    Every section supports a specific decision or action.
+                  </span>
+                </div>
+
+                <div>
+                  <strong>Stronger conversion path</strong>
+
+                  <span>
+                    Calls, forms, bookings, and WhatsApp are easy to reach.
+                  </span>
+                </div>
+              </div>
+
+              <button
+                class="button button-primary js-open-contact"
+                type="button"
+              >
+                Plan my website
+                <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </article>
+
+          <div class="capability-grid">
+            <article class="capability-card reveal">
+              <span class="capability-number">01</span>
+
+              <div class="capability-icon" aria-hidden="true">
+                ◎
+              </div>
+
+              <h3>
+                Messaging and positioning
+              </h3>
+
+              <p>
+                We turn unclear or overly technical information into messaging
+                customers can understand quickly.
+              </p>
+
+              <strong>
+                So visitors know why you are the right choice.
+              </strong>
+            </article>
+
+            <article class="capability-card reveal">
+              <span class="capability-number">02</span>
+
+              <div class="capability-icon" aria-hidden="true">
+                ↗
+              </div>
+
+              <h3>
+                Conversion-focused design
+              </h3>
+
+              <p>
+                We structure pages around customer questions, trust signals,
+                and actions instead of filling space with decorative content.
+              </p>
+
+              <strong>
+                So more visitors become conversations.
+              </strong>
+            </article>
+
+            <article class="capability-card reveal">
+              <span class="capability-number">03</span>
+
+              <div class="capability-icon" aria-hidden="true">
+                G
+              </div>
+
+              <h3>
+                Google visibility
+              </h3>
+
+              <p>
+                We connect website structure, Google Business information,
+                local search, reviews, and contact details.
+              </p>
+
+              <strong>
+                So customers can find and trust you faster.
+              </strong>
+            </article>
+          </div>
+
+          <div class="concept-strip reveal">
+            <div>
+              <p class="kicker">
+                Growing with our clients
+              </p>
+
+              <h3>
+                Looking for a launch partner, not another agency presentation?
+              </h3>
+
+              <p>
+                Zenta works with businesses that value strategy, clear
+                communication, and a professional digital presence.
+              </p>
+            </div>
+
+            <button
+              class="button button-secondary js-open-contact"
+              type="button"
+            >
+              Start a conversation
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="kicker">Solutions</p>
+
+          <h2>
+            The right digital foundation for your business.
+          </h2>
+
+          <p>
+            Start with a website or connect multiple services into one clear
+            customer journey.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card service-card-featured reveal">
+            <div class="service-top">
+              <span>01</span>
+              <strong>Core solution</strong>
+            </div>
+
+            <h3>Website strategy and design</h3>
+
+            <p>
+              Position your business clearly, build trust, and turn more
+              visitors into enquiries or customers.
+            </p>
+
+            <ul>
+              <li>Business and customer strategy</li>
+              <li>Conversion-focused page structure</li>
+              <li>Responsive interface design</li>
+              <li>SEO and performance foundations</li>
+              <li>WhatsApp and contact integration</li>
+            </ul>
+
+            <button
+              class="button button-primary js-open-contact"
+              type="button"
+            >
+              Discuss a website
+            </button>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-top">
+              <span>02</span>
+            </div>
+
+            <h3>Google visibility</h3>
+
+            <p>
+              Help customers discover, understand, and contact your business
+              through Google Search and Maps.
+            </p>
+
+            <a class="text-link" href="#google">
+              Explore Google visibility
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-top">
+              <span>03</span>
+            </div>
+
+            <h3>Review systems</h3>
+
+            <p>
+              Make it easier for happy customers to leave credible reviews that
+              strengthen trust.
+            </p>
+
+            <a class="text-link" href="reviews.html">
+              Improve customer trust
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-top">
+              <span>04</span>
+            </div>
+
+            <h3>Advertising audits</h3>
+
+            <p>
+              Find wasted spend, weak tracking, and conversion problems before
+              investing more.
+            </p>
+
+            <a class="text-link" href="ads-audit.html">
+              Explore advertising audits
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section" id="process">
+      <div class="container">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <p class="kicker">Our process</p>
+
+            <h2>
+              A clear path from idea to launch.
+            </h2>
+          </div>
+
+          <p>
+            Every stage connects directly to your business goals and customer
+            experience.
+          </p>
+        </div>
+
+        <div class="compact-process">
+          <article class="reveal">
+            <span>01</span>
+            <h3>Discover</h3>
+            <p>
+              Understand your business, customers, goals, and current
+              challenges.
+            </p>
+          </article>
+
+          <article class="reveal">
+            <span>02</span>
+            <h3>Structure</h3>
+            <p>
+              Plan the messaging, pages, customer journey, and calls to action.
+            </p>
+          </article>
+
+          <article class="reveal">
+            <span>03</span>
+            <h3>Design and build</h3>
+            <p>
+              Create a responsive experience designed for clarity, speed, and
+              action.
+            </p>
+          </article>
+
+          <article class="reveal">
+            <span>04</span>
+            <h3>Launch</h3>
+            <p>
+              Test, publish, measure, and identify future improvements.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section google-section" id="google">
+      <div class="container google-layout">
+        <div class="google-content reveal-left">
+          <p class="kicker">Google visibility</p>
+
+          <h2>
+            Get found before your competitors.
+          </h2>
+
+          <p class="large-copy">
+            When customers search for your business—or a service like
+            yours—you should be easy to find, understand, and contact.
+          </p>
+
+          <div class="google-benefits">
+            <div>
+              <strong>Appear professionally</strong>
+              <span>
+                Correct business information, category, hours, photos, and
+                branding.
+              </span>
+            </div>
+
+            <div>
+              <strong>Build customer trust</strong>
+              <span>
+                Reviews and accurate information help customers choose with
+                confidence.
+              </span>
+            </div>
+
+            <div>
+              <strong>Generate direct action</strong>
+              <span>
+                Connect Search and Maps to your phone, website, directions, and
+                WhatsApp.
+              </span>
+            </div>
+          </div>
+
+          <button
+            class="button button-primary js-open-contact"
+            type="button"
+            data-service="Google visibility"
+          >
+            Improve my Google visibility
+          </button>
+        </div>
+
+        <div class="google-preview reveal-right">
+          <div class="google-header">
+            <span class="google-wordmark">
+              <i>G</i>oogle
+            </span>
+
+            <span class="verified-label">
+              Verified business
+            </span>
+          </div>
+
+          <div class="map-preview">
+            <div class="map-road road-one"></div>
+            <div class="map-road road-two"></div>
+            <div class="map-road road-three"></div>
+            <div class="map-pin"></div>
+          </div>
+
+          <div class="business-profile">
+            <div class="profile-heading">
+              <div>
+                <h3>Your Business</h3>
+                <span class="rating">4.9 ★★★★★</span>
+              </div>
+
+              <span class="open-label">
+                Open
+              </span>
+            </div>
+
+            <p>
+              Professional service · Paramaribo
+            </p>
+
+            <div class="profile-actions">
+              <span>Website</span>
+              <span>Directions</span>
+              <span>WhatsApp</span>
+            </div>
+
+            <div class="profile-results">
+              <div>
+                <strong>More</strong>
+                <span>visibility</span>
+              </div>
+
+              <div>
+                <strong>More</strong>
+                <span>trust</span>
+              </div>
+
+              <div>
+                <strong>More</strong>
+                <span>conversations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="short-about">
+      <div class="container short-about-grid reveal">
+        <p class="kicker">About Zenta</p>
+
+        <div>
+          <h2>
+            Strategy, design, and visibility working together.
+          </h2>
+
+          <p>
+            Zenta helps businesses in Suriname communicate more clearly, build
+            trust, and turn their digital presence into a practical growth
+            tool.
+          </p>
+
+          <a class="text-link" href="about.html">
+            Learn more about Zenta
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container final-cta-inner reveal">
+        <p class="kicker">Start your project</p>
+
+        <h2>
+          Ready to build a website that works as hard as you do?
+        </h2>
+
+        <p>
+          Tell us about your business, your current challenge, and what you want
+          your next website to achieve.
+        </p>
+
+        <div class="final-actions">
+          <button
+            class="button button-dark js-open-contact"
+            type="button"
+          >
+            Book a free strategy call
+            <span aria-hidden="true">↗</span>
+          </button>
+
+          <a class="final-email" href="mailto:info@zentacreative.com">
+            info@zentacreative.com
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#top">
+          Zenta<span>.</span>
+        </a>
+
+        <p>
+          Websites and digital growth systems for ambitious businesses in
+          Suriname.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <strong>Explore</strong>
+          <a href="#approach">Our approach</a>
+          <a href="#services">Solutions</a>
+          <a href="#process">Process</a>
+          <a href="pricing.html">Pricing</a>
+        </div>
+
+        <div>
+          <strong>Company</strong>
+          <a href="about.html">About</a>
+          <a href="ads-audit.html">Advertising audits</a>
+          <a href="reviews.html">Review systems</a>
+        </div>
+
+        <div>
+          <strong>Contact</strong>
+
+          <a href="mailto:info@zentacreative.com">
+            info@zentacreative.com
+          </a>
+
+          <a
+            href="https://wa.me/5978877663"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
+
+          <span>Paramaribo, Suriname</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>
+        © <span id="year"></span> Zenta Creative. All rights reserved.
+      </span>
+
+      <a href="#top">
+        Back to top ↑
+      </a>
+    </div>
+  </footer>
+
+  <button
+    class="floating-whatsapp js-open-contact"
+    type="button"
+    aria-label="Contact Zenta Creative"
+  >
+    <span aria-hidden="true">●</span>
+    Let's talk
+  </button>
+
+  <div
+    class="contact-modal"
+    id="contactModal"
+    aria-hidden="true"
+  >
+    <div class="contact-backdrop" data-close-modal></div>
+
+    <section
+      class="contact-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contactTitle"
+      aria-describedby="contactDescription"
+    >
+      <button
+        class="modal-close"
+        type="button"
+        aria-label="Close contact form"
+        data-close-modal
+      >
+        ×
+      </button>
+
+      <p class="kicker">Start a conversation</p>
+
+      <h2 id="contactTitle">
+        Tell us what you want to improve.
+      </h2>
+
+      <p id="contactDescription">
+        Complete the form and we will open a prefilled WhatsApp message. You
+        can review it before sending.
+      </p>
+
+      <form id="contactForm" novalidate>
+        <div class="form-grid">
+          <label class="form-field">
+            <span>Your name</span>
+
+            <input
+              id="contactName"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            />
+
+            <small class="field-error">
+              Please enter your name.
+            </small>
+          </label>
+
+          <label class="form-field">
+            <span>Business name</span>
+
+            <input
+              id="contactBusiness"
+              name="business"
+              type="text"
+              autocomplete="organization"
+              required
+            />
+
+            <small class="field-error">
+              Please enter your business name.
+            </small>
+          </label>
+
+          <label class="form-field">
+            <span>Phone or email</span>
+
+            <input
+              id="contactDetails"
+              name="contact"
+              type="text"
+              autocomplete="email"
+              required
+            />
+
+            <small class="field-error">
+              Please enter a phone number or email.
+            </small>
+          </label>
+
+          <label class="form-field">
+            <span>What do you need?</span>
+
+            <select
+              id="contactService"
+              name="service"
+              required
+            >
+              <option value="">Choose a service</option>
+              <option value="Website strategy and design">
+                Website strategy and design
+              </option>
+              <option value="Website redesign">
+                Website redesign
+              </option>
+              <option value="Google visibility">
+                Google visibility
+              </option>
+              <option value="Review system">
+                Review system
+              </option>
+              <option value="Advertising audit">
+                Advertising audit
+              </option>
+              <option value="Not sure yet">
+                Not sure yet
+              </option>
+            </select>
+
+            <small class="field-error">
+              Please choose a service.
+            </small>
+          </label>
+
+          <label class="form-field form-field-full">
+            <span>What would you like to achieve?</span>
+
+            <textarea
+              id="contactGoal"
+              name="goal"
+              rows="5"
+              required
+              placeholder="For example: more enquiries, a more professional website, better Google visibility..."
+            ></textarea>
+
+            <small class="field-error">
+              Please briefly describe your goal.
+            </small>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button
+            class="button button-primary"
+            type="submit"
+          >
+            Continue on WhatsApp
+            <span aria-hidden="true">↗</span>
+          </button>
+
+          <p>
+            No payment or commitment is required.
+          </p>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    const whatsappNumber = "5978877663";
+
+    const nav = document.getElementById("nav");
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    const modal = document.getElementById("contactModal");
+    const contactForm = document.getElementById("contactForm");
+    const serviceSelect = document.getElementById("contactService");
+    const modalCloseButton = modal.querySelector(".modal-close");
+    const openContactButtons = document.querySelectorAll(".js-open-contact");
+    const closeModalButtons = modal.querySelectorAll("[data-close-modal]");
+    const sectionLinks = document.querySelectorAll(".nav-section-link");
+    const sections = document.querySelectorAll(
+      "#approach, #services, #process, #google"
+    );
+
+    let lastFocusedElement = null;
+
+    function closeMobileMenu() {
+      navLinks.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Open navigation menu");
+      document.body.classList.remove("menu-open");
+    }
+
+    function openModal(service = "") {
+      lastFocusedElement = document.activeElement;
+
+      if (service) {
+        serviceSelect.value = service;
+      }
+
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+
+      closeMobileMenu();
+
+      window.setTimeout(() => {
+        document.getElementById("contactName").focus();
+      }, 50);
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+
+    function validateField(field) {
+      const wrapper = field.closest(".form-field");
+      const isValid = field.checkValidity();
+
+      wrapper.classList.toggle("has-error", !isValid);
+
+      return isValid;
+    }
+
+    function trapModalFocus(event) {
+      if (!modal.classList.contains("is-open") || event.key !== "Tab") {
+        return;
+      }
+
+      const focusableElements = modal.querySelectorAll(
+        'button, input, select, textarea, a[href], [tabindex]:not([tabindex="-1"])'
+      );
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (
+        !event.shiftKey &&
+        document.activeElement === lastElement
+      ) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    }
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      document.body.classList.toggle("menu-open", isOpen);
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    openContactButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        openModal(button.dataset.service || "");
+      });
+    });
+
+    closeModalButtons.forEach((button) => {
+      button.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal();
+      }
+
+      trapModalFocus(event);
+    });
+
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("is-scrolled", window.scrollY > 20);
+    });
+
+    contactForm.querySelectorAll("input, select, textarea").forEach((field) => {
+      field.addEventListener("blur", () => validateField(field));
+
+      field.addEventListener("input", () => {
+        if (field.closest(".form-field").classList.contains("has-error")) {
+          validateField(field);
+        }
+      });
+    });
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const fields = Array.from(
+        contactForm.querySelectorAll("input, select, textarea")
+      );
+
+      const allFieldsValid = fields
+        .map(validateField)
+        .every(Boolean);
+
+      if (!allFieldsValid) {
+        const firstInvalidField = contactForm.querySelector(":invalid");
+
+        if (firstInvalidField) {
+          firstInvalidField.focus();
+        }
+
+        return;
+      }
+
+      const name = document.getElementById("contactName").value.trim();
+      const business = document.getElementById("contactBusiness").value.trim();
+      const details = document.getElementById("contactDetails").value.trim();
+      const service = serviceSelect.value;
+      const goal = document.getElementById("contactGoal").value.trim();
+
+      const message = [
+        "Hi Zenta, I would like to discuss a project.",
+        "",
+        `Name: ${name}`,
+        `Business: ${business}`,
+        `Contact: ${details}`,
+        `Service: ${service}`,
+        "",
+        "Goal:",
+        goal
+      ].join("\n");
+
+      const whatsappUrl =
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    });
+
+    const revealElements = document.querySelectorAll(
+      ".reveal, .reveal-left, .reveal-right"
+    );
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -40px 0px"
+        }
+      );
+
+      revealElements.forEach((element) => {
+        revealObserver.observe(element);
+      });
+
+      const navigationObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            sectionLinks.forEach((link) => {
+              const isCurrent =
+                link.getAttribute("href") === `#${entry.target.id}`;
+
+              link.classList.toggle("is-active", isCurrent);
+
+              if (isCurrent) {
+                link.setAttribute("aria-current", "location");
+              } else {
+                link.removeAttribute("aria-current");
+              }
+            });
+          });
+        },
+        {
+          rootMargin: "-35% 0px -55% 0px",
+          threshold: 0
+        }
+      );
+
+      sections.forEach((section) => {
+        navigationObserver.observe(section);
+      });
+    } else {
+      revealElements.forEach((element) => {
+        element.classList.add("is-visible");
+      });
+    }
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
+
+## `style.css`
+
+```css
 :root {
   --background: #070908;
   --background-soft: #0d100e;
@@ -11,6 +1420,8 @@
   --muted-dark: #626961;
 
   --accent: #c4ff67;
+
+  --danger: #ff8e8e;
 
   --line: rgba(255, 255, 255, 0.1);
   --line-light: rgba(19, 22, 19, 0.12);
@@ -52,7 +1463,8 @@ body {
   line-height: 1.65;
 }
 
-body.menu-open {
+body.menu-open,
+body.modal-open {
   overflow: hidden;
 }
 
@@ -66,6 +1478,10 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  color: inherit;
 }
 
 img,
@@ -116,7 +1532,10 @@ ul {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 4px;
 }
@@ -237,6 +1656,8 @@ button:focus-visible {
   background: rgba(93, 109, 255, 0.08);
 }
 
+/* Navigation */
+
 .nav {
   position: fixed;
   top: 20px;
@@ -292,7 +1713,8 @@ button:focus-visible {
     background-color var(--transition);
 }
 
-.nav-links > a:not(.nav-cta):hover {
+.nav-links > a:not(.nav-cta):hover,
+.nav-links > a.is-active {
   color: var(--text);
   background: rgba(255, 255, 255, 0.06);
 }
@@ -305,6 +1727,7 @@ button:focus-visible {
   background: var(--accent);
   font-size: 13px;
   font-weight: 800;
+  cursor: pointer;
   transition:
     background-color var(--transition),
     transform var(--transition);
@@ -361,6 +1784,8 @@ button:focus-visible {
   background: var(--text-dark);
 }
 
+/* Buttons */
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -372,6 +1797,7 @@ button:focus-visible {
   border-radius: 14px;
   font-size: 14px;
   font-weight: 800;
+  cursor: pointer;
   transition:
     transform var(--transition),
     background-color var(--transition),
@@ -430,6 +1856,8 @@ button:focus-visible {
 .text-link:hover span {
   transform: translate(3px, -2px);
 }
+
+/* Hero */
 
 .hero {
   position: relative;
@@ -724,6 +2152,7 @@ button:focus-visible {
 }
 
 .status-dot {
+  flex: 0 0 auto;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -762,6 +2191,8 @@ button:focus-visible {
   font-size: 10px;
   font-weight: 700;
 }
+
+/* Value */
 
 .value-section {
   background: rgba(255, 255, 255, 0.018);
@@ -836,7 +2267,7 @@ button:focus-visible {
   font-size: 12px;
 }
 
-/* Capability section */
+/* Capability */
 
 .capability-section {
   overflow: hidden;
@@ -1571,7 +3002,7 @@ button:focus-visible {
   font-size: 9px;
 }
 
-/* About and CTA */
+/* About and final CTA */
 
 .short-about {
   padding: 110px 0;
@@ -1719,6 +3150,7 @@ button:focus-visible {
   box-shadow: 0 18px 55px rgba(0, 0, 0, 0.32);
   font-size: 12px;
   font-weight: 800;
+  cursor: pointer;
   transition:
     transform var(--transition),
     background-color var(--transition);
@@ -1731,6 +3163,198 @@ button:focus-visible {
 
 .floating-whatsapp span {
   color: #2b7c35;
+}
+
+/* Contact modal */
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 220ms ease,
+    visibility 220ms ease;
+}
+
+.contact-modal.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.contact-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 4, 3, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.contact-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(760px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 46px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(196, 255, 103, 0.12),
+      transparent 35%
+    ),
+    var(--surface);
+  box-shadow: var(--shadow);
+  transform: translateY(18px) scale(0.98);
+  transition: transform 220ms ease;
+}
+
+.contact-modal.is-open .contact-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.contact-dialog > h2 {
+  max-width: 620px;
+  margin-bottom: 18px;
+  font-size: clamp(38px, 6vw, 62px);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.contact-dialog > p:not(.kicker) {
+  max-width: 650px;
+  margin-bottom: 34px;
+  color: var(--muted);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-field {
+  display: grid;
+  gap: 8px;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
+}
+
+.form-field > span {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.055);
+  transition:
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.form-field input,
+.form-field select {
+  min-height: 52px;
+  padding: 0 15px;
+}
+
+.form-field textarea {
+  min-height: 140px;
+  padding: 14px 15px;
+  resize: vertical;
+}
+
+.form-field select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 22px,
+    calc(100% - 13px) 22px;
+  background-repeat: no-repeat;
+  background-size: 5px 5px;
+}
+
+.form-field select option {
+  color: var(--text-dark);
+}
+
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.field-error {
+  display: none;
+  color: var(--danger);
+  font-size: 11px;
+}
+
+.form-field.has-error input,
+.form-field.has-error select,
+.form-field.has-error textarea {
+  border-color: var(--danger);
+}
+
+.form-field.has-error .field-error {
+  display: block;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 26px;
+}
+
+.form-actions p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
 }
 
 /* Reveal animation */
@@ -1901,6 +3525,7 @@ button:focus-visible {
   }
 
   .nav-cta {
+    width: 100%;
     margin: 4px 0 0;
     padding: 15px;
     text-align: center;
@@ -2108,6 +3733,38 @@ button:focus-visible {
     right: 14px;
     bottom: 14px;
   }
+
+  .contact-modal {
+    padding: 12px;
+  }
+
+  .contact-dialog {
+    max-height: calc(100vh - 24px);
+    padding: 38px 22px 26px;
+    border-radius: 22px;
+  }
+
+  .modal-close {
+    top: 13px;
+    right: 13px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field-full {
+    grid-column: auto;
+  }
+
+  .form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-actions .button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 560px) {
@@ -2171,3 +3828,4 @@ button:focus-visible {
     transform: none;
   }
 }
+```
